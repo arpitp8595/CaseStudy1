@@ -26,11 +26,13 @@ public class ProductController {
 
     @GetMapping(value = "/{productId}")
     public ProductDTO getProduct(@PathVariable String productId) {
+        log.info("Retrieving data with Product Id: "+productId);
         return productService.getProduct(productId);
     }
 
     @PutMapping(value = "/{productId}")
     public ProductDTO updateProduct(@PathVariable String productId, @RequestBody ProductDTO productDTO) {
+        log.info("Retrieving data with Product Id: "+productId);
         return productService.updateProduct(productId, productDTO);
     }
 
