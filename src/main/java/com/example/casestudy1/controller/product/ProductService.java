@@ -5,6 +5,7 @@ import com.example.casestudy1.domain.dto.ProductDTO;
 import com.example.casestudy1.domain.model.Product;
 import com.example.casestudy1.domain.util.ProductSchemaConverter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @Slf4j
 public class ProductService {
 
+    @Autowired
     private final ProductRepository productRepository;
 
     public ProductService(ProductRepository productRepository) {
@@ -36,4 +38,10 @@ public class ProductService {
         log.info("PUT operation Successful with productId: "+productId);
         return ProductSchemaConverter.modelToSchema(product);
     }
+
+    public void saveProduct(ProductDTO productDTO) {
+        Product product = ProductSchemaConverter.schemaToModel(productDTO);
+        productRepository.save(product);
+    }
+
 }
