@@ -28,18 +28,24 @@ public class ProductController {
     @GetMapping(value = "/{productId}")
     public ProductDTO getProduct(@PathVariable String productId) {
         log.info("Retrieving data with Product Id: "+productId);
-        return productService.getProduct(productId);
+        ProductDTO product = productService.getProduct(productId);
+        log.info("GET operation successful.!");
+        return product;
     }
 
     @PutMapping(value = "/put")
     public ProductDTO updateProduct(@RequestBody ProductDTO productDTO) {
         log.info("Retrieving data with Product Id: "+productDTO.getId());
-        return productService.updateProduct(productDTO.getId(), productDTO);
+        ProductDTO product = productService.updateProduct(productDTO.getId(), productDTO);
+        log.info("UPDATE operation Successful with Request Body: " + product);
+        return product;
     }
 
     @PostMapping("/saveProduct")
     public ProductDTO saveProduct(@RequestBody ProductDTO productDTO) {
-        return productService.saveProduct(productDTO);
+        ProductDTO product = productService.saveProduct(productDTO);
+        log.info("SAVE operation successful with Request Body: " + product.toString());
+        return product;
     }
 
     //400
@@ -47,7 +53,7 @@ public class ProductController {
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
     @ResponseBody
     public Object handleEmployeeException(IllegalStateException exception) {
-        log.error("Error EmployeeException: " + exception.getMessage(), exception);
+        log.error("Error Product Exception: " + exception.getMessage(), exception);
         return exception.getMessage();
     }
 
