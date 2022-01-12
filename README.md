@@ -1,5 +1,9 @@
 # CaseStudy1
 
+**Note**: Below is just a sample Request Body and Response body. this won't be the same everytime. I used them in my local environment just to test whether code is working perfectly or not.
+
+
+
 SAVE: http://localhost:8080/products/saveProduct
 
 Request Body
