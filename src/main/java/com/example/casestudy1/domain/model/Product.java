@@ -13,4 +13,8 @@ public class Product {
     @Id private String id;
     private String name;
     private Price current_price;
+
+    public Product(String name) {
+        this.name = name;
+    }
 }

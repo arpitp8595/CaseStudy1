@@ -14,4 +14,11 @@ public class ProductDTO {
     private String id;
     private String name;
     private PriceDTO current_price;
+
+    public ProductDTO(String name) {
+        this.name = name;
+    }
+
 }
+
+
