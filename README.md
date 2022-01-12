@@ -1,29 +1,61 @@
 # CaseStudy1
 
+SAVE: http://localhost:8080/products/saveProduct
 
-PUT: http://localhost:8080/products/1
 Request Body
 {
-"id": 1,
-"name": "test",
-"current_price": {
-"value": 12.00,
-"currency_code": "USD"
-}
+        "id": 1,
+        "name": "Hamer",
+        "current_price": {
+        "value": 50,
+        "currency_code": "USD"
+    }
 }
 
+Response Body
+{
+        "id": "61df3f262f913362aba3b9c0",
+        "name": "Hamer",
+        "current_price": {
+        "value": 50,
+        "currency_code": "USD"
+    }
+}
 
-GET: http://localhost:8080/products/1
+Note: id (61df3f262f913362aba3b9c0) won't be same in all scenario.
+
+PUT: http://localhost:8080/products/61df3f262f913362aba3b9c0
+Request Body
+{
+        "id": "61df3f262f913362aba3b9c0",
+        "name": "Hamer",
+        "current_price": {
+        "value": 120.00,
+        "currency_code": "USD"
+    }
+}
+
+Response Body
+{
+        "id": "61df3f262f913362aba3b9c0",
+        "name": "Hamer",
+        "current_price": {
+        "value": 120,
+        "currency_code": "USD"
+    }
+}
+
+GET: http://localhost:8080/products/61df3f262f913362aba3b9c0
 
 Response Body:
 {
-"id": "1",
-"name": "test",
-"current_price": {
-"value": 12,
-"currency_code": "USD"
-}
+        "id": "61df3f262f913362aba3b9c0",
+        "name": "Hamer",
+        "current_price": {
+        "value": 120,
+        "currency_code": "USD"
+    }
 }
 
 
-Swagger UI: http://localhost:8080/swagger-ui/index.html
+**Swagger UI: http://localhost:8080/swagger-ui/index.html**

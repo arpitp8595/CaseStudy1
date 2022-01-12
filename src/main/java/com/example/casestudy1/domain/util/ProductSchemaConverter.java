@@ -20,7 +20,7 @@ public class ProductSchemaConverter {
 
     public static Product schemaToModel(ProductDTO productDTO) {
         return Product.builder()
-                .id(productDTO.getId())
+                //id(productDTO.getId())
                 .name(productDTO.getName())
                 .current_price(Price.builder()
                         .value(productDTO.getCurrent_price().getValue())

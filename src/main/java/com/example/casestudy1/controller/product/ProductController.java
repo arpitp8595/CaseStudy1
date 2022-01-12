@@ -38,8 +38,8 @@ public class ProductController {
     }
 
     @PostMapping("/saveProduct")
-    public void saveProduct(@RequestBody ProductDTO productDTO) {
-        productService.saveProduct(productDTO);
+    public ProductDTO saveProduct(@RequestBody ProductDTO productDTO) {
+        return productService.saveProduct(productDTO);
     }
 
     //400
